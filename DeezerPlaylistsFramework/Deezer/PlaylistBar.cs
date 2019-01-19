@@ -61,7 +61,7 @@ namespace TestFramework.Deezer
             _createPlaylistWindow.FindElement(By.CssSelector("button#modal_playlist_assistant_submit")).Click();
         }
 
-        private List<string> GetExistingPlaylists()
+        public List<string> GetExistingPlaylists()
         {
             ExpandPlaylistsBar();
             var playLists = new List<string>();
@@ -97,7 +97,7 @@ namespace TestFramework.Deezer
             return new DeezerPlaylistPage();
         }
 
-        public void DeletePlaylists(params string[] playlists)
+        public void DeletePlaylists(List<string> playlists)
         {
             foreach (var playlist in playlists)
             {

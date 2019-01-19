@@ -1,5 +1,6 @@
 ﻿using TestFramework.Deezer;
 using TestFramework.LastFm;
+using TestFramework.SetList;
 
 namespace TestFramework
 {
@@ -7,5 +8,6 @@ namespace TestFramework
     {
         public static LastFmPage LastFmPage => new LastFmPage();
         public static DeezerLoginPage DeezerLoginPage => new DeezerLoginPage();
+        public static SetListHomePage SetListHomePage => new SetListHomePage();
     }
 }

@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -23,8 +24,8 @@ namespace TestFramework.LastFm
             if (Artists == null)
                 throw new NotFoundException("No search results");
 
-            var links = Artists.FindElements(By.TagName("a"));
-            var bandLink = links.FirstOrDefault(el => el.Text.ToLower().Equals(bandName.ToLower()));
+            var bandLink = Artists.FindElements(By.CssSelector("a.link-block-target"))
+                .FirstOrDefault(el => el.Text.ToLower().Equals(bandName));
 
             if (bandLink == null)
                 throw new NotFoundException($"{bandName} was not found");
