@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeezerPlaylistCreatorTests", "DeezerPlaylistCreatorTests\DeezerPlaylistCreatorTests.csproj", "{2A897D6A-8F70-43D0-831C-285526329FB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeezerPlaylistsFramework", "DeezerPlaylistsFramework\DeezerPlaylistsFramework.csproj", "{17507F13-3953-4330-B967-63CE59C7070F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lastfm-sharp", "lastfm-sharp\lastfm-sharp.csproj", "{91E7DBDB-431C-432F-8430-8A1E564B43DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{17507F13-3953-4330-B967-63CE59C7070F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17507F13-3953-4330-B967-63CE59C7070F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17507F13-3953-4330-B967-63CE59C7070F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E7DBDB-431C-432F-8430-8A1E564B43DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E7DBDB-431C-432F-8430-8A1E564B43DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E7DBDB-431C-432F-8430-8A1E564B43DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E7DBDB-431C-432F-8430-8A1E564B43DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1873165F-24A3-475D-9564-CE48F2805672}
 	EndGlobalSection
 EndGlobal

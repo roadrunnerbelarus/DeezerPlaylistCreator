@@ -35,7 +35,7 @@ namespace TestFramework.LastFm
             Driver.Wait.Until(ExpectedConditions.TextToBePresentInElement(_contentHeader, "Tracks"));
         }
 
-        public void OpenView(TimeView time)
+        public TracksPage OpenView(TimeView time)
         {
             string view;
             switch (time)
@@ -59,14 +59,15 @@ namespace TestFramework.LastFm
                     throw new ArgumentOutOfRangeException();
             }
 
-            if (_time.Text.Contains(view))
-                return;
+            if (!_time.Text.Contains(view))
+            {
+                _time.Click();
+                _list.Single(v => v.Text == view).Click();
 
-            _time.Click();
-            _list.Single(v => v.Text == view).Click();
-
-            //Driver.Wait.Until(ExpectedConditions.TextToBePresentInElement(_time, view));
-            Driver.Wait.Until(d => _time.Text.Contains(view));
+                //Driver.Wait.Until(ExpectedConditions.TextToBePresentInElement(_time, view));
+                Driver.Wait.Until(d => _time.Text.Contains(view));
+            }
+            return this;
         }
 
         public List<string> GetTopSongsNames(int count)
@@ -74,7 +75,7 @@ namespace TestFramework.LastFm
             var songNames = new List<string>();
             for (var i = 2; i < count + 2; i++)
             {
-                songNames.Add(_songEls[i].Text);
+                songNames.Add(_songEls[i].Text.ToLower());
             }
             return songNames;
         }

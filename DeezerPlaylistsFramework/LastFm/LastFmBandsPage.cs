@@ -37,9 +37,17 @@ namespace TestFramework.LastFm
             return new TracksPage();
         }
 
+        public TracksPage Tracks
+        {
+            get
+            {
+                TracksBtn.Click();
+                return new TracksPage();
+            }
+        }
+
         //public Tracks Tracks { get; set; }
         //public TYPE Albums { get; set; }
         //public TYPE Overview { get; set; }
-
     }
 }

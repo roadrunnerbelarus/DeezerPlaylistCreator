@@ -10,7 +10,12 @@ namespace TestFramework.Deezer
 {
     public class DeezerPlaylistPage : Tracks
     {
-        [FindsBy(How = How.CssSelector, Using = "span.icon.icon-edit")] private IWebElement _editBtn;
+        [FindsBy(How = How.XPath, Using = "//*[contains(@class, \'svg-icon-edit\')]/..")] private IWebElement _editBtn;
+
+        [FindsBy(How = How.CssSelector, Using = "button.btn.btn-action.btn-play.btn-primary")] private IWebElement
+            _listenPlaylistBtn;
+
+        [FindsBy(How = How.CssSelector, Using = "div.modal-dialog.modal-large")] private IWebElement _editPlaylistWnd;
 
         internal DeezerPlaylistPage()
         {
@@ -28,7 +33,14 @@ namespace TestFramework.Deezer
         {
             _editBtn.Click();
             //return Driver.Wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.modal-dialog.modal-large")));
-            return Driver.Wait.Until(d => Driver.Instance.FindElement(By.CssSelector("div.modal-dialog.modal-large")));
+
+            Driver.Wait.Until(d => _editPlaylistWnd.Displayed);
+            return _editPlaylistWnd;
+        }
+
+        public void Play()
+        {
+            _listenPlaylistBtn.Click();
         }
     }
 }
